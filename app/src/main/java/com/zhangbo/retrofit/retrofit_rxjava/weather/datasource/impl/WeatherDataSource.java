@@ -1,7 +1,7 @@
 package com.zhangbo.retrofit.retrofit_rxjava.weather.datasource.impl;
 
 import com.zhangbo.retrofit.retrofit_rxjava.weather.bean.Weather;
-import com.zhangbo.retrofit.retrofit_rxjava.http.ApiService;
+import com.zhangbo.retrofit.retrofit_rxjava.api.ApiService;
 import com.zhangbo.retrofit.retrofit_rxjava.http.callback.RequestCallBack;
 import com.zhangbo.retrofit.retrofit_rxjava.http.retrofit.BaseRemoteDataSource;
 import com.zhangbo.retrofit.retrofit_rxjava.http.viewmodel.BaseViewModel;

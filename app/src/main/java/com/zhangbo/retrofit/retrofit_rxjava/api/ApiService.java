@@ -1,4 +1,4 @@
-package com.zhangbo.retrofit.retrofit_rxjava.http;
+package com.zhangbo.retrofit.retrofit_rxjava.api;
 
 import com.zhangbo.retrofit.retrofit_rxjava.weather.bean.Weather;
 import com.zhangbo.retrofit.retrofit_rxjava.http.bean.BaseResponseBody;

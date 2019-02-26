@@ -1,4 +1,4 @@
-package com.zhangbo.retrofit.retrofit_rxjava.weather.viewmodel.base;
+package com.zhangbo.retrofit.retrofit_rxjava.base.viewmodelprovider;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.NonNull;

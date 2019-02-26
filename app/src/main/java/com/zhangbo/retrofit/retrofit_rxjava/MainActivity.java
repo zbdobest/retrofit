@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.zhangbo.retrofit.retrofit_rxjava.weather.activity.WeatherActivity;
+import com.zhangbo.retrofit.retrofit_rxjava.weather.ui.activity.WeatherActivity;
 
 public class MainActivity extends AppCompatActivity {
 
