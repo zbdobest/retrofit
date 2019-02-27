@@ -93,7 +93,12 @@ public class RetrofitManagement {
                         case HTTPCode.CODE_PARAMS_ERROR:
                             throw new ParamsErrorException();
                         default:
-                            throw new ServerResultException(result.getMsg(),result.getCode());
+                            return observable.create(new ObservableOnSubscribe<T>() {
+                                @Override
+                                public void subscribe(ObservableEmitter<T> emitter) throws Exception {
+                                    emitter.onError(new ServerResultException(result.getMsg(),result.getCode()));
+                                }
+                            });
                     }
                 });
     }

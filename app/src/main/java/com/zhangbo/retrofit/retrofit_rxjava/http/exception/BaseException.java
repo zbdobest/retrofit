@@ -12,6 +12,7 @@ import com.zhangbo.retrofit.retrofit_rxjava.http.config.HTTPCode;
 public class BaseException extends RuntimeException{
 
     private int errorCode = HTTPCode.CODE_UNKNOWN;
+    private String msg;
 
     public BaseException() {
     }
@@ -19,9 +20,14 @@ public class BaseException extends RuntimeException{
     public BaseException(String message, int errorCode) {
         super(message);
         this.errorCode = errorCode;
+        this.msg = message;
     }
 
     public int getErrorCode() {
         return errorCode;
+    }
+
+    public String getMsg() {
+        return msg;
     }
 }

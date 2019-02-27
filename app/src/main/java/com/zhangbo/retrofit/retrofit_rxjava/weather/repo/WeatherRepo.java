@@ -2,8 +2,11 @@ package com.zhangbo.retrofit.retrofit_rxjava.weather.repo;
 
 import android.arch.lifecycle.MutableLiveData;
 
+import com.apkfuns.logutils.LogUtils;
 import com.zhangbo.retrofit.retrofit_rxjava.http.bean.BaseRo;
 import com.zhangbo.retrofit.retrofit_rxjava.http.callback.RequestCallBack;
+import com.zhangbo.retrofit.retrofit_rxjava.http.callback.RequestMultiplyCallBack;
+import com.zhangbo.retrofit.retrofit_rxjava.http.exception.BaseException;
 import com.zhangbo.retrofit.retrofit_rxjava.weather.bean.Weather;
 import com.zhangbo.retrofit.retrofit_rxjava.weather.datasource.inter.IWeatherDataSource;
 
@@ -26,6 +29,11 @@ public class WeatherRepo extends BaseRo<IWeatherDataSource> {
             @Override
             public void onSuccess(Weather weather) {
                 weatherMutableLiveData.setValue(weather);
+            }
+
+            @Override
+            public void onError(int code, String msg) {
+                LogUtils.e("errorCode"+code+"----"+"errorMsg"+msg);
             }
         });
         return weatherMutableLiveData;

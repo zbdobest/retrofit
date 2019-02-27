@@ -7,6 +7,7 @@ import com.zhangbo.retrofit.retrofit_rxjava.http.callback.RequestCallBack;
 import com.zhangbo.retrofit.retrofit_rxjava.http.callback.RequestMultiplyCallBack;
 import com.zhangbo.retrofit.retrofit_rxjava.http.config.HTTPCode;
 import com.zhangbo.retrofit.retrofit_rxjava.http.exception.BaseException;
+import com.zhangbo.retrofit.retrofit_rxjava.http.exception.ServerResultException;
 import com.zhangbo.retrofit.retrofit_rxjava.http.viewmodel.BaseViewModel;
 
 import io.reactivex.observers.DisposableObserver;
@@ -44,7 +45,12 @@ public class BaseSubscriber<T> extends DisposableObserver<T> {
     @Override
     public void onError(Throwable e) {
         e.printStackTrace();
-        if(mRequestCallBack instanceof RequestMultiplyCallBack){
+        if(e instanceof ServerResultException){
+            if(mRequestCallBack != null){
+                ServerResultException serverResultException = (ServerResultException) e;
+                mRequestCallBack.onError(serverResultException.getErrorCode(),serverResultException.getMsg());
+            }
+        }else if(mRequestCallBack instanceof RequestMultiplyCallBack){
             RequestMultiplyCallBack requestMultiplyCallBack = (RequestMultiplyCallBack) mRequestCallBack;
             if(e instanceof BaseException){
                 requestMultiplyCallBack.onFail((BaseException) e);

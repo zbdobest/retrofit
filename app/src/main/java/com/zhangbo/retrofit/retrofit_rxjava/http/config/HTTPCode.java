@@ -12,7 +12,7 @@ public class HTTPCode {
     //请求成功
     public static final int CODE_SUCCESS = 0;
     //未知错误
-    public static final int CODE_UNKNOWN = -1;
+    public static final int CODE_UNKNOWN = 999;
     //参数错误
     public static final int CODE_PARAMS_ERROR = -1;
     //token失效

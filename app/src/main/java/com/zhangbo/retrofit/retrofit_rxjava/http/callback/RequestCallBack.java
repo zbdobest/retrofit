@@ -11,4 +11,5 @@ public interface RequestCallBack<T> {
 
     void onSuccess(T t);
 
+    void onError(int code,String msg);
 }
